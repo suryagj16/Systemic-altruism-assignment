@@ -1,0 +1,74 @@
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize WebDriver
+driver = webdriver.Chrome()
+
+# Open Pump.Fun
+driver.get('https://pump.fun')
+
+# Example wallet creation steps (update selectors based on actual website)
+try:
+    # Click on create wallet button
+    create_wallet_button = driver.find_element(By.ID, 'create-wallet')
+    create_wallet_button.click()
+    
+    # Fill out wallet creation form (update with actual form details)
+    username_field = driver.find_element(By.ID, 'username')
+    username_field.send_keys('testuser')
+    
+    password_field = driver.find_element(By.ID, 'password')
+    password_field.send_keys('securepassword123')
+    
+    confirm_password_field = driver.find_element(By.ID, 'confirm-password')
+    confirm_password_field.send_keys('securepassword123')
+    
+    # Submit form
+    submit_button = driver.find_element(By.ID, 'submit-wallet')
+    submit_button.click()
+    
+    time.sleep(5)  # Wait for the wallet to be created
+
+finally:
+    # Close WebDriver
+    driver.quit()
+[7:37 PM, 6/19/2024] Surya Narayanan😎: from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+
+# Initialize WebDriver
+driver = webdriver.Chrome()
+
+# Open Pump.Fun and login (if necessary)
+driver.get('https://pump.fun/login')
+
+# Login steps (update selectors based on actual website)
+username_field = driver.find_element(By.ID, 'login-username')
+username_field.send_keys('testuser')
+
+password_field = driver.find_element(By.ID, 'login-password')
+password_field.send_keys('securepassword123')
+
+login_button = driver.find_element(By.ID, 'login-submit')
+login_button.click()
+
+time.sleep(5)  # Wait for login to complete
+
+# Navigate to the page to comment on
+driver.get('https://pump.fun/new-link-page')
+
+# Example comment posting steps (update selectors based on actual website)
+try:
+    comment_field = driver.find_element(By.ID, 'comment')
+    comment_field.send_keys('Check out the Pump.Fun trading bot! Earn big with minimal effort. [link]')
+    
+    submit_comment_button = driver.find_element(By.ID, 'submit-comment')
+    submit_comment_button.click()
+    
+    time.sleep(5)  # Wait for the comment to be posted
+
+finally:
+    # Close WebDriver
+    driver.quit()
